@@ -4,8 +4,7 @@ print(f'Name: {name}')
 age = 18
 print(f'Age: {age}')
 
-new_age = 20
-age = new_age
+age = age + 2
 print(f'New Age: {age}')
 
 is_student = True
