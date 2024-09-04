@@ -3,30 +3,23 @@ def calculate_structure_sum(data):
     Рекурсивная функция для подсчета суммы всех чисел и длин всех строк
     во вложенных структурах данных.
     """
-    total_sum = 0
-
-    # Внутренняя рекурсивная функция для обработки разных типов данных
-    def recursive_sum(item):
-        nonlocal total_sum
-        if isinstance(item, int):  # Если элемент - число, добавляем его к сумме
-            total_sum += item
-        elif isinstance(item, str):  # Если элемент - строка, добавляем её длину к сумме
-            total_sum += len(item)
-        elif isinstance(
-            item, (list, tuple, set)
-        ):  # Если элемент - список, кортеж или множество, проходим по всем внутренним элементам
-            for sub_item in item:
-                recursive_sum(sub_item)
-        elif isinstance(
-            item, dict
-        ):  # Если элемент - словарь, проходим по всем ключам и значениям
-            for key, value in item.items():
-                recursive_sum(key)
-                recursive_sum(value)
-
-    # Запускаем рекурсивную функцию
-    recursive_sum(data)
-    return total_sum
+    if isinstance(data, int):  # Если элемент - число, возвращаем его значение
+        return data
+    elif isinstance(data, str):  # Если элемент - строка, возвращаем её длину
+        return len(data)
+    elif isinstance(
+        data, (list, tuple, set)
+    ):  # Если элемент - список, кортеж или множество, суммируем результаты для всех внутренних элементов
+        return sum(calculate_structure_sum(sub_item) for sub_item in data)
+    elif isinstance(
+        data, dict
+    ):  # Если элемент - словарь, суммируем результаты для всех ключей и значений
+        return sum(
+            calculate_structure_sum(key) + calculate_structure_sum(value)
+            for key, value in data.items()
+        )
+    else:
+        return 0  # Для остальных типов данных возвращаем 0
 
 
 # Пример использования
