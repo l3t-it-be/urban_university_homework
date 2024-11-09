@@ -1,1 +1,5 @@
-tqdm>=4.66.6
+tqdm >= 4.66.6
+selene >= 2.0.0rc9
+Faker >= 30.8.2
+sympy >= 1.13.3
+requests >= 2.32.3
