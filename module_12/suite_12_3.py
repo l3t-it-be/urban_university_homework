@@ -1,7 +1,6 @@
 import unittest
 
-from module_12.tests_12_1 import RunnerTest
-from module_12.tests_12_2 import TournamentTest
+from module_12.tests_12_3 import RunnerTest, TournamentTest
 
 
 def suite():
