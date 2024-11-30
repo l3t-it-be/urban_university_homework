@@ -1,0 +1,17 @@
+WARNING: 2024-11-30 15:39:09,228 - tests_12_4.py - Неверный тип данных для объекта Runner: Имя может быть только строкой, передано int
+Traceback (most recent call last):
+  File "C:\Users\ka7eo\PycharmProjects\urban_university_homework\module_12\tests_12_4.py", line 55, in test_invalid_name
+    Runner(2)  # Передаем int вместо str
+    ^^^^^^^^^
+  File "C:\Users\ka7eo\PycharmProjects\urban_university_homework\module_12\HumanMoveTest.py", line 6, in __init__
+    raise TypeError(
+TypeError: Имя может быть только строкой, передано int
+WARNING: 2024-11-30 15:39:09,233 - tests_12_4.py - Неверная скорость для Runner: Скорость не может быть отрицательной, сейчас -5
+Traceback (most recent call last):
+  File "C:\Users\ka7eo\PycharmProjects\urban_university_homework\module_12\tests_12_4.py", line 43, in test_invalid_speed
+    Runner(
+  File "C:\Users\ka7eo\PycharmProjects\urban_university_homework\module_12\HumanMoveTest.py", line 13, in __init__
+    raise ValueError(
+ValueError: Скорость не может быть отрицательной, сейчас -5
+INFO: 2024-11-30 15:39:09,234 - tests_12_4.py - "test_run" выполнен успешно
+INFO: 2024-11-30 15:39:09,235 - tests_12_4.py - "test_walk" выполнен успешно
